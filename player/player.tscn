@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cckblv7yw5qkb"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_1ic03"]
+[ext_resource type="Texture2D" uid="uid://bo8vyjke88j8k" path="res://assets/Exhaust.png" id="2_1r3ug"]
+[ext_resource type="Texture2D" uid="uid://do4yogdss1vsm" path="res://assets/Player.png" id="3_kk0we"]
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(550, 266)
+script = ExtResource("1_1ic03")
+metadata/_edit_group_ = true
+
+[node name="Exhaust" type="Sprite2D" parent="."]
+position = Vector2(0, 50)
+texture = ExtResource("2_1r3ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+texture = ExtResource("3_kk0we")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 17.9, 28, 13.6, 28, -0.700001, 21.7, -19, 29, -19, 25.9, -28, 17.9, -28, 14.4, -3, -25.6, -3, -29.2)

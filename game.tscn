@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2vby13vrpku6"]
 
-[ext_resource type="Texture2D" uid="uid://do4yogdss1vsm" path="res://assets/Player.png" id="1_1igaa"]
-[ext_resource type="Script" path="res://player/player.gd" id="1_1v86s"]
+[ext_resource type="PackedScene" uid="uid://cckblv7yw5qkb" path="res://player/player.tscn" id="1_g2cfm"]
+[ext_resource type="PackedScene" uid="uid://dm10oachencyu" path="res://Astroid/asteroid.tscn" id="2_vprjf"]
 
 [node name="Game" type="Node2D"]
 
-[node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(550, 266)
-script = ExtResource("1_1v86s")
-metadata/_edit_group_ = true
+[node name="player" parent="." instance=ExtResource("1_g2cfm")]
 
-[node name="Sprite2D" type="Sprite2D" parent="player"]
-position = Vector2(-2, 0)
-texture = ExtResource("1_1igaa")
+[node name="Astroid_container" type="Node2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
-polygon = PackedVector2Array(5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 17.9, 28, 13.6, 28, -0.700001, 21.7, -19, 29, -19, 25.9, -28, 17.9, -28, 14.4, -3, -25.6, -3, -29.2)
+[node name="Asteroid" parent="Astroid_container" instance=ExtResource("2_vprjf")]
+position = Vector2(100, 100)
+
+[node name="Asteroid2" parent="Astroid_container" instance=ExtResource("2_vprjf")]
+position = Vector2(900, 600)
+
+[node name="Effects" type="Node2D" parent="."]
