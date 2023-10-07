@@ -7,7 +7,7 @@ var nose = Vector2(0,-60)
 var health = 10
 var Bullet = load("res://player/bullet.tscn")
 var Effects = null
-var Explosion = load("res://Effects/explosion.tscn")
+var Explosion = load("res://effects/explosion.tscn")
 
 func get_input():
 	var to_return = Vector2.ZERO
@@ -35,7 +35,7 @@ func _physics_process(_delta):
 		var bullet = Bullet.instantiate()
 		bullet.position = position + nose.rotated(rotation)
 		bullet.rotation = rotation
-		var Effects = get_node_or_null("/root/Game/Effects")
+		Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
 			Effects.add_child(bullet)
 
@@ -48,7 +48,7 @@ func damage(d):
 			Effects.add_child(explosion)
 			explosion.global_position = global_position
 			hide()
-			await explosion.anumation_finished
+			await explosion.animation_finished
 		Global.update_lives(-1)
 		queue_free()
 

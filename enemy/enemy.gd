@@ -22,7 +22,7 @@ func _physics_process(_delta):
 
 
 func _on_timer_timeout():
-	var Player = get_node_or_null("/root/Game/Player_Container/Player")
+	var Player = get_node_or_null("/root/Game/Player_Container/player")
 	var Effects = get_node_or_null("/root/Game/Effects")
 	if Player != null and Effects != null:
 		var bullet = Bullet.instantiate()

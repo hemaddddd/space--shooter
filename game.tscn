@@ -95,25 +95,25 @@ cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
 
 [node name="Game" type="Node2D"]
 
-[node name="Astroid_container" type="Node2D" parent="."]
+[node name="Astroid_Container" type="Node2D" parent="."]
 
-[node name="Asteroid" parent="Astroid_container" instance=ExtResource("2_vprjf")]
+[node name="Asteroid" parent="Astroid_Container" instance=ExtResource("2_vprjf")]
 position = Vector2(100, 100)
 
-[node name="Asteroid2" parent="Astroid_container" instance=ExtResource("2_vprjf")]
+[node name="Asteroid2" parent="Astroid_Container" instance=ExtResource("2_vprjf")]
 position = Vector2(1022, 114)
 
 [node name="Effects" type="Node2D" parent="."]
 
-[node name="Player_container" type="Node2D" parent="."]
+[node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource("2_5wegq")
 
-[node name="player" parent="Player_container" instance=ExtResource("1_g2cfm")]
+[node name="player" parent="Player_Container" instance=ExtResource("1_g2cfm")]
 position = Vector2(626, 337)
 
-[node name="Enemy_container" type="Node2D" parent="."]
+[node name="Enemy_Container" type="Node2D" parent="."]
 
-[node name="enemy" parent="Enemy_container" instance=ExtResource("3_3jvww")]
+[node name="enemy" parent="Enemy_Container" instance=ExtResource("3_3jvww")]
 position = Vector2(310, 106)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -161,6 +161,7 @@ autostart = true
 
 [node name="Menu" type="Control" parent="UI"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

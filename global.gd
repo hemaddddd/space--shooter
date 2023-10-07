@@ -3,7 +3,7 @@ extends Node
 var VP = Vector2.ZERO
 var score = 0
 var lives = 0
-var tine = 0
+var time = 0
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -26,8 +26,9 @@ func _process(_delta):
 				menu.show()
 	var Astroid_Container = get_node_or_null("/root/Game/Astroid_Container")
 	var Enemy_Container = get_node_or_null("/root/Game/Enemy_Container")
-	if Astroid_Container.get_child_count() == 0 and Enemy_Container.get_child_Count() == 0:
-		get_tree().change_scene_to_file("res://UI/end_game.tscn")
+	if Astroid_Container != null and Enemy_Container != null:	
+		if Astroid_Container.get_child_count() == 0 and Enemy_Container.get_child_count() == 0:
+			get_tree().change_scene_to_file("res://UI/end_game.tscn")
 
 func update_lives(l):
 	lives += l
@@ -43,8 +44,8 @@ func update_score(s):
 	if hud != null:
 		hud.update_score()
 	
-func update_tine(t):
-	tine += t
+func update_time(t):
+	time += t
 
 func _resize():
 	VP = get_viewport().size
@@ -55,6 +56,6 @@ func _resize():
 func reset():
 	get_tree().paused = false
 	score = 0
-	tine = 38
+	time = 38
 	lives = 5
 	
